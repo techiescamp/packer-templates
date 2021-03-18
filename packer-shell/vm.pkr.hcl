@@ -1,7 +1,7 @@
 
 variable "ami_id" {
   type    = string
-  default = "ami-6f68cf0f"
+  default = "ami-0ca5c3bd5a268e7db"
 }
 
 locals {
@@ -16,7 +16,7 @@ variable "app_name" {
 source "amazon-ebs" "httpd" {
   ami_name      = "PACKER-DEMO-${local.app_name}"
   instance_type = "t2.micro"
-  region        = "eu-west-1"
+  region        = "us-west-2"
   source_ami    = "${var.ami_id}"
   ssh_username  = "ec2-user"
   tags = {
