@@ -29,7 +29,7 @@ build {
   sources = ["source.amazon-ebs.httpd"]
 
   provisioner "shell" {
-    script = "script.sh"
+    script = "script/script.sh"
   }
 
   post-processor "shell-local" {
