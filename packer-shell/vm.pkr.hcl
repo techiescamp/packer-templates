@@ -8,11 +8,6 @@ locals {
     app_name = "httpd"
 }
 
-variable "app_name" {
-  type    = string
-  default = "httpd"
-}
-
 source "amazon-ebs" "httpd" {
   ami_name      = "PACKER-DEMO-${local.app_name}"
   instance_type = "t2.micro"
@@ -21,7 +16,7 @@ source "amazon-ebs" "httpd" {
   ssh_username  = "ec2-user"
   tags = {
     Env  = "DEMO"
-    Name = "PACKER-DEMO-${var.app_name}"
+    Name = "PACKER-DEMO-${local.app_name}"
   }
 }
 

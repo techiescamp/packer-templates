@@ -1,7 +1,8 @@
 {
     "variables": {
       "ami_id": "ami-6f68cf0f",
-      "app_name": "httpd"
+      "app_name": "httpd",
+      "script_path": "{{env `SCRIPT_PATH`}}"
     },
 
     "builders": [{
@@ -21,7 +22,7 @@
     "provisioners": [
       {
         "type": "shell",
-        "script": "demo-script.sh"
+        "script": "{{user `script_path` }}/demo-script.sh"
       }
     ]
 
