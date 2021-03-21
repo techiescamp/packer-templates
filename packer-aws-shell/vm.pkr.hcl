@@ -18,7 +18,7 @@ source "amazon-ebs" "httpd" {
     Env  = "DEMO"
     Name = "PACKER-DEMO-${local.app_name}"
   }
-}
+} asdfasdf
 
 build {
   sources = ["source.amazon-ebs.httpd"]

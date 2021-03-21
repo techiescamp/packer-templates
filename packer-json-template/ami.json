@@ -1,29 +1,28 @@
 {
-    "variables": {
-      "ami_id": "ami-6f68cf0f",
-      "app_name": "httpd",
-      "script_path": "{{env `SCRIPT_PATH`}}"
-    },
+  "variables": {
+    "ami_id": "ami-01e78c5619c5e68b4",
+    "app_name": "httpd"
+  },
 
-    "builders": [{
-      "type": "amazon-ebs",
-      "region": "eu-west-1",
-      "source_ami": "{{user `ami_id`}}",
-      "instance_type": "t2.micro",
-      "ssh_username": "ec2-user",
-      "ami_name": "PACKER-DEMO-{{user `app_name` }}",
-      "tags": {
-          "Name": "PACKER-DEMO-{{user `app_name` }}",
-          "Env": "DEMO"
+  "builders": [{
+    "type": "amazon-ebs",
+    "region": "eu-west-2",
+    "source_ami": "{{user `ami_id`}}",
+    "instance_type": "t2.micro",
+    "ssh_username": "ec2-user",
+    "ami_name": "PACKER-DEMO-{{user `app_name` }}",
+    "tags": {
+        "Name": "PACKER-DEMO-{{user `app_name` }}",
+        "Env": "DEMO"
 
-        }
-    }],
-
-    "provisioners": [
-      {
-        "type": "shell",
-        "script": "{{user `script_path` }}/demo-script.sh"
       }
-    ]
+  }],
 
-  }
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "demo-script.sh"
+    }
+  ]
+
+}
