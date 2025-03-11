@@ -30,4 +30,8 @@ build {
   post-processor "shell-local" {
     inline = ["echo foo"]
   }
+
+  post-processor "manifest" {
+    output = "output.json"
+  }
 }
