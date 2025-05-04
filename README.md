@@ -1,5 +1,5 @@
 # packer-templates
 
-Hashicorp packer Tempaltes for learning
+Hashicorp packer Templates for learning
 
-Documenation: https://devopscube.com/packer-tutorial-for-beginners/
+Documentation: https://devopscube.com/packer-tutorial-for-beginners/
